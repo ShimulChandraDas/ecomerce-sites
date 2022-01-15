@@ -25,13 +25,16 @@ nav{
 }
 .navigation li{
     list-style: none;
-    margin: 20px;
+    margin: 10px;
 }
 .navigation li a{
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
     color:#3A3A3A;
+}
+.fa-search .fa-shopping-cart{
+    margin: 0 3px;
 }
 .primary-button{
     outline: 0;
@@ -53,13 +56,20 @@ nav{
     top: 5px;
     box-shadow: 0 2px 2 #a5075e;  
 }
+#nav-toggler{
+    display: none;
+}
+.nav-toggler-icon{
+    display: none ;
+    font-size: 30px;
+}
 /* Banner part */
 .banner{
     height: calc(100vh - 80px);
+    min-height: 500px;
     display: flex;
     position: relative;
-
-
+    column-gap: 40px;
 }
 .banner-left {
     width: 582px;
@@ -77,20 +87,33 @@ nav{
     font-size: 40px; 
 }
 .banner-left p{
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.5;
     margin: 20px 0;
 }
 .banner-right img{
-    width: 100%;
+    height: 80%;
+    width: 80%;
+    margin: 10%;
+    object-fit: cover;
 }
 
 /* Websites */
 .websites img{
-    margin: 0 2.8%; 
+    margin: 0 2.8%;
+    height: fit-content;
+    width: fit-content; 
+   
 }
     
 /* Product Details */
+
+h2{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 50px 0;
+    text-align: center;
+}
 .products-section .product-banner img{
     width: 300px;
     height: 256px;
@@ -132,17 +155,92 @@ nav{
     align-items: right;
 }
 
+.extra{
+    margin-top: 40PX;
+    background: cyan;
+    text-align: center;
+    justify-content: center;
+   
+}
+
 footer{
+
     background-color: black;
     color: white;
     text-align: center;
     font-size: 12px;
     padding: 2% 0;
     margin-top: 100px;
+   
 }
 footer i{
     margin: 0 1%;
     padding: 5px;
     border: 0.5px solid black;
     border-radius: 50%;
+}
+
+
+
+/* Responsive CSS */
+
+@media (max-width:1200px) {
+    .products,
+    .extra{
+        grid-template-columns: 1fr 1fr;
+       
+    }
+    .banner{
+        flex-direction: column;
+        height: fit-content;
+     }
+    .banner-left h1{
+        font-size: 30px; 
+    }
+    .banner-left{
+        order: 2;
+        padding: 50px 0;
+    }
+}
+
+@media only screen and (max-width:688px){
+    .banner{
+       flex-direction: column;
+       height: fit-content;
+    }
+    .products,
+    .extra{
+        grid-template-columns: 1fr;
+    }
+    .banner-left{
+        order: 2;
+        padding: 50px 0;
+    }
+    .nav-toggler-icon{
+        display: block;
+    }
+    
+    .navigation{
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color:white ;
+        padding: 0 0 0 20px;
+        transform: translateY(-350px);
+        transition: .6s ease-in-out;
+      
+    }
+    .navigation li a{
+        color: black;
+    }
+    #nav-toggler:checked ~ .navigation{
+        transform: translateY(-80px);
+
+    }
+
+
+    }
 }
