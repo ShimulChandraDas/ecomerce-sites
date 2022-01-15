@@ -12,6 +12,7 @@ body{
     max-width: 1200px;
     margin: 0 auto;
     padding: 30px ;
+
 }
 nav{
     display: flex;
@@ -50,21 +51,30 @@ nav{
 }
 .primary-button:active{
     top: 5px;
-    box-shadow: 0 2px 2 #a5075e;
-    
+    box-shadow: 0 2px 2 #a5075e;  
 }
-
 /* Banner part */
 .banner{
     height: calc(100vh - 80px);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
-    margin: 100px 0;
+    display: flex;
+    position: relative;
+
 
 }
+.banner-left {
+    width: 582px;
+    height: 270px;
+    left: 210px;
+    top: 315px;
+}
+.banner-right{
+    width: 440px;
+    height: 414px;
+    left: 835px;
+    top: 211px;
+}
 .banner-left h1{
-    font-size: 45px; 
+    font-size: 40px; 
 }
 .banner-left p{
     font-size: 18px;
@@ -77,14 +87,15 @@ nav{
 
 /* Websites */
 .websites img{
-    margin: 10px;
-    justify-content: space-between;
+    margin: 0 2.8%; 
 }
     
-
 /* Product Details */
+.products-section .product-banner img{
+    width: 300px;
+    height: 256px;
+}
 .products{
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 40px;
@@ -95,19 +106,30 @@ nav{
     padding: 20px;
     box-shadow: 0 30px 30px rgba(0, 0, 0, .2);
 }
-.product img{
-    width: 100%;
+.fa-star{
+    font-size: 12px;
 }
-.product h2{
-    font-size: 24px;
-    font-weight: 600;
+
+.fa-star.filed{
+    color:#FB8200;
 }
-p{
+.fa-star.empty{
+    color: #858072 ;
+}
+.product-detail p{
+    color: #787885;
     font-size: 14px;
 }
 
-section button{
-  justify-content: right;
+
+.products-section button{
+    margin-top: 20px;
+    color: #E02C6D;
+    background: none;
+    border-color: #fff;
+    width : 80px;
+    height: 24px;
+    align-items: right;
 }
 
 footer{
@@ -115,6 +137,12 @@ footer{
     color: white;
     text-align: center;
     font-size: 12px;
-    padding: 50px 0;
+    padding: 2% 0;
     margin-top: 100px;
+}
+footer i{
+    margin: 0 1%;
+    padding: 5px;
+    border: 0.5px solid black;
+    border-radius: 50%;
 }
